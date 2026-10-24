@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MySite — Портфолио</title>
+<style>
+:root{--p:#6366f1;--bg:#fff;--tx:#1f2937;--cd:#f9fafb;--bd:#e5e7eb}
+[data-theme="dark"]{--bg:#111827;--tx:#f9fafb;--cd:#1f2937;--bd:#374151}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);transition:.3s;line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--bd)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-size:1.5rem;font-weight:bold;color:var(--p);text-decoration:none}
+nav{display:flex;gap:25px;align-items:center}
+nav a{color:var(--tx);text-decoration:none;font-weight:500;transition:.2s}
+nav a:hover{color:var(--p)}
+#themeToggle{background:none;border:none;font-size:1.3rem;cursor:pointer}
+#burger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--tx)}
+.hero{padding:100px 0;text-align:center;background:linear-gradient(135deg,var(--p),#8b5cf6);color:#fff}
+.hero h1{font-size:3rem;margin-bottom:20px}
+.hero h1 span{color:#fbbf24}
+.hero p{font-size:1.3rem;margin-bottom:30px;opacity:.9}
+.btn{display:inline-block;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;transition:.3s;margin:0 8px}
+.btn-p{background:#fff;color:var(--p)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.2)}
+.btn-o{border:2px solid #fff;color:#fff}
+.btn-o:hover{background:#fff;color:var(--p)}
+section{padding:80px 20px}
+h2{text-align:center;font-size:2.2rem;margin-bottom:50px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.card{background:var(--cd);padding:40px 30px;border-radius:16px;text-align:center;border:1px solid var(--bd);transition:.3s}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(99,102,241,.15)}
+.card .icon{font-size:3rem;margin-bottom:15px}
+.card h3{margin-bottom:10px}
+footer{background:var(--cd);padding:30px 0;text-align:center;border-top:1px solid var(--bd)}
+.fade{opacity:0;transform:translateY(30px);transition:.8s}
+.fade.show{opacity:1;transform:translateY(0)}
+form{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:15px}
+input,textarea{padding:14px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font-family:inherit;font-size:1rem}
+button[type="submit"]{padding:14px;background:var(--p);color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;transition:.3s}
+button[type="submit"]:hover{background:#4f46e5}
+@media(max-width:768px){
+nav{position:fixed;top:70px;right:-100%;flex-direction:column;background:var(--bg);width:70%;height:calc(100vh - 70px);padding:30px;transition:right .3s;border-left:1px solid var(--bd)}
+nav.open{right:0}
+#burger{display:block}
+.hero h1{font-size:2rem}
+.hero p{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<a href="#home" class="logo">🚀 MySite</a>
+<nav id="nav">
+<a href="#home">Главная</a>
+<a href="#features">Услуги</a>
+<a href="#portfolio">Портфолио</a>
+<a href="#contact">Контакты</a>
+<button id="themeToggle">🌙</button>
+</nav>
+<button id="burger">☰</button>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container">
+<h1>Добро пожаловать на <span>MySite</span></h1>
+<p>Современный сайт, созданный с любовью к коду</p>
+<div>
+<a href="#portfolio" class="btn btn-p">Смотреть работы</a>
+<a href="#contact" class="btn btn-o">Связаться</a>
+</div>
+</div>
+</section>
+
+<section id="features">
+<div class="container">
+<h2>Наши преимущества</h2>
+<div class="grid">
+<div class="card fade"><div class="icon">⚡</div><h3>Быстро</h3><p>Молниеносная загрузка и оптимизация</p></div>
+<div class="card fade"><div class="icon">🎨</div><h3>Красиво</h3><p>Современный дизайн и адаптив</p></div>
+<div class="card fade"><div class="icon">🔒</div><h3>Надёжно</h3><p>Безопасность на первом месте</p></div>
+</div>
+</div>
+</section>
+
+<section id="portfolio" style="background:var(--cd)">
+<div class="container">
+<h2>Портфолио</h2>
+<div class="grid">
+<div class="card fade"><div class="icon">💻</div><h3>Проект 1</h3><p>Корпоративный сайт</p></div>
+<div class="card fade"><div class="icon">📱</div><h3>Проект 2</h3><p>Мобильное приложение</p></div>
+<div class="card fade"><div class="icon">🛒</div><h3>Проект 3</h3><p>Интернет-магазин</p></div>
+<div class="card fade"><div class="icon">🎮</div><h3>Проект 4</h3><p>Веб-игра</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<h2>Связаться с нами</h2>
+<form onsubmit="event.preventDefault();alert('Спасибо! Сообщение отправлено.');this.reset()">
+<input type="text" placeholder="Ваше имя" required>
+<input type="email" placeholder="Email" required>
+<textarea rows="5" placeholder="Сообщение" required></textarea>
+<button type="submit">Отправить</button>
+</form>
+</div>
+</section>
+
+<footer><div class="container"><p>© 2025 MySite. Все права защищены.</p></div></footer>
+
+<script>
+// Мобильное меню
+document.getElementById('burger').onclick=()=>document.getElementById('nav').classList.toggle('open');
+document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.getElementById('nav').classList.remove('open'));
+
+// Тема
+const toggle=document.getElementById('themeToggle');
+const saved=localStorage.getItem('theme');
+if(saved){document.documentElement.setAttribute('data-theme',saved);toggle.textContent=saved==='dark'?'☀️':'🌙';}
+toggle.onclick=()=>{
+const cur=document.documentElement.getAttribute('data-theme');
+const next=cur==='dark'?'light':'dark';
+document.documentElement.setAttribute('data-theme',next);
+localStorage.setItem('theme',next);
+toggle.textContent=next==='dark'?'☀️':'🌙';
+};
+
+// Анимация появления
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}));
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+
+// Плавная прокрутка
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{
+e.preventDefault();
+document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+});
+</script>
+
+</body>
+</html>
